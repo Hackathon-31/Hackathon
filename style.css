@@ -1,0 +1,744 @@
+html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    scroll-snap-type: mandatory;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    background-image: url(Green\ And\ White\ Aesthetic\ Background\ Instagram\ Story\ \(1\).png);
+    position: sticky;
+    background-size: 106%;
+    background-repeat: no-repeat;
+   background-attachment: fixed;
+}
+.div1{
+  display: none;
+}
+.navbar {
+  color: white;
+  padding: 15px;
+  position: fixed;
+  width: 47%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5); 
+  border-radius: 20px; 
+  backdrop-filter: blur(10px); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  background-image: url(Untitled_design__1_-removebg-preview.png);
+  background-repeat: no-repeat;
+  background-position: 99%;
+  background-size: 100px;
+  height: auto;
+  margin: 0 10px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  margin-top: 20px;
+}
+
+.navbar nav {
+  width: 100%;
+  max-width: 1200px; 
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center; 
+  padding-left: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+nav ul li {
+  margin-right: 70px;
+  font-size: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 0 0 15px #8e54e9;
+  transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  transition: 0.7s;
+  font-size: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 300;
+}
+.info{
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-top: 13%;
+    text-align: center;
+}
+
+.para-1{
+    color: white;
+    font-size: 25px; 
+    text-align: center;
+}
+.para-2{
+  color: white;
+  font-size: 25px; 
+  text-align: center;
+  padding-bottom: 15%;
+}
+.logo{
+    height: 200px;
+    width: 200px;
+    z-index: 3;  
+}
+
+.input-div{
+    height: 200px;
+}
+#chatbot{
+    height: 100%;
+    width: 100%;
+    padding-top: 15%;
+    margin-top: 20%;
+}
+.navbar li:after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 5px;
+    display: block;
+    transition: all 0.7s ease;
+    bottom: 0%;
+  }
+  .navbar li:hover::after {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  #chat-history {
+    height: 300px;
+    overflow-y: scroll;
+  }
+  
+  .user-message {
+    text-align: right;
+    padding: 10px;
+    background-color: #71c543;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    width: auto;
+    font-size: 21px;
+  }
+  
+  .bot-message {
+    text-align: left;
+    padding: 10px;
+    background-color: #cadcc0;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    font-size: 21px;
+  }
+  form {
+    display: flex;
+  }
+  input {
+    flex-grow: 1;
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .enter {
+    margin-top: 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Animation for background color and transform */
+  }
+  .enter:hover {
+      background-color: #45a049;
+      transform: scale(1.05); 
+  }
+  #loader {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0; 
+    transition: opacity 0.5s ease;
+    animation: fadeIn 0.5s ease; 
+    animation: initialMovement 1s ease forwards;
+}
+#loader img {
+  width: 150px;
+  height: auto;
+  animation: rotate 1s linear infinite; 
+}
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+  @keyframes initialMovement {
+    from {
+      transform: translate(-50%, -50%) rotate(-90deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+  }
+  
+  #chat-container {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 2px 5px rgba(62, 62, 62, 0.614);
+    width: 800px;
+    margin-left: 25%;
+    margin-bottom: 10%;
+    z-index: 3;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background-color: rgba(94, 167, 89, 0.573);
+    border-radius: 12px;
+    border: 1px solid rgba(14, 143, 16, 0.125);
+    backdrop-filter: blur(10px);
+  }
+  .about-us1{
+    padding-top: 30%;
+  }
+  .container{
+    display: inline-block;
+  }
+  .title{
+    font-size: 70px;
+    font-weight: 350;
+    padding-top: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-bottom: 5%;
+    text-align: center;
+    background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+    background-size: cover;
+    color: transparent;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    text-transform: uppercase;
+}
+input[type="text"] {
+  margin-top: 15px;
+  padding: 15px;
+  border: 2px solid #ccc; 
+  border-radius: 5px; 
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+
+}
+
+input[type="text"]:focus {
+  border-color: #4CAF50; /* Green border on focus */
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.5); /* Green glow shadow */
+}
+.faq-header{
+  font-size: 42px;
+  width: 100%;
+  justify-content: center;
+  padding-top: 40px;
+  margin-top: 10%;
+}
+
+.faq-content {
+  margin: 0 auto;
+}
+
+.faq-question {
+  padding: 5px 0;
+}
+
+.panel-title {
+  font-weight: 600;
+  font-size: 24px;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 10px 10px 0 48px;
+  display: block;
+  cursor: pointer;
+}
+
+.panel-content {
+  font-size: 20px;
+  padding: 0px 5px;
+  margin: 0 20px;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+  position: relative;
+  opacity: 0;
+  -webkit-transition: .4s ease;
+  -moz-transition: .4s ease;
+  -o-transition: .4s ease;
+  transition: .4s ease;
+}
+
+.panel:checked ~ .panel-content{
+  height: auto;
+  opacity: 1;
+  padding: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 27px;
+}
+
+.plus {
+  position: absolute;
+  margin-left: 20px;
+  margin-top: 4px;
+  font-size: 42px;
+  line-height: 100%;
+  -webkit-user-select: none;    
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-transition: .2s ease;
+  -moz-transition: .2s ease;
+  -o-transition: .2s ease;
+  transition: .2s ease;
+}
+
+.panel:checked ~ .plus {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.panel {
+  display: none;
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #4CAF50; 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #327735;
+}
+#faq{
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  color: white;
+  margin-bottom: 20%;
+  padding-top: 5%;
+}
+.faq-header{
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+
+}
+.faq-content{
+  align-items: center;
+  text-align: left;
+
+  width: 41%;
+}
+.faq-question{
+  font-weight: 200;
+  padding-left: 10px;
+}
+.plus{
+  margin-left: 35%;
+  transition: 0.7s;
+  rotate: (360deg);
+}
+button {
+  margin-top: 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Animation for background color and transform */
+}
+#about-us{
+  padding-top: 5%;
+  width: 90%;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-bottom: 220px;
+}
+.title-1{
+  font-size: 70px;
+  font-weight: 350;
+  padding-top: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+  background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+  background-size: cover;
+  color: transparent;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+}
+footer{
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.footertext1{
+  text-align: center;
+  font-size: 20px;
+  color: white;
+}
+.parabox1 {
+  float: left;
+  width: 30%;
+  height: 280px;
+}
+
+.parabox2 {
+  float: left;
+  width: 30%;
+  height: 280px;
+  margin-left: 60px;
+}
+
+.parabox3 {
+  float: right;
+  width: 30%;
+  height: 280px;
+}
+.faq-titletext{
+  background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+  background-size: cover;
+  color: transparent;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+  font-size: 70px;
+}
+.agro-title{
+  background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+  background-size: cover;
+  color: transparent;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+  font-size: 40px;
+}
+.intro1{
+  font-weight: 400;
+  font-size: 30px;
+}
+
+@media (max-width: 768px) {
+  body {
+      background-size: cover;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+    padding: 10px;
+    background-size: 50px;
+    height: auto;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
+
+nav ul li {
+    margin-right: 0;
+    font-size: 18px;
+}
+
+nav a {
+  font-size: 25px;
+}
+
+.div1 {
+  display: none;
+}
+
+  .info {
+      padding-left: 10%;
+      padding-right: 10%;
+      padding-top: 20%;
+  }
+
+  .title {
+      font-size: 40px;
+  }
+
+  .para-1, .para-2 {
+      font-size: 18px;
+  }
+
+  #chat-container {
+      width: 90%;
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-bottom: 50px;
+  }
+
+  .agro-title {
+      font-size: 30px;
+  }
+
+  .faq-content {
+      width: 90%;
+  }
+
+  .faq-titletext, .title-1 {
+      font-size: 50px;
+  }
+
+  .aboutustext {
+      font-size: 18px;
+  }
+
+  .parabox1, .parabox2, .parabox3 {
+      float: none;
+      width: 100%;
+      height: auto;
+      margin-left: 0;
+      margin-bottom: 20px;
+  }
+
+  footer {
+      position: relative;
+  }
+
+  .faq-header {
+      margin-top: 5%;
+  }
+
+  .faq-question {
+      padding: 10px 0;
+  }
+
+  input[type="text"] {
+      padding: 10px;
+  }
+
+  .enter, button {
+      padding: 8px 12px;
+  }
+
+  #loader img {
+      width: 100px;
+  }
+}
+
+/* Styles for very small devices like phones */
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: row;
+    width: 100%;
+    padding: 7px;
+    height: auto;
+}
+
+nav ul li {
+    font-size: 14px;
+    padding-left: 2%;
+}
+
+nav a {
+  font-size: 25px;
+}
+
+.div1 {
+  display: none;
+}
+
+  .info {
+      padding-left: 5%;
+      padding-right: 5%;
+      padding-top: 30%;
+  }
+
+  .title {
+      font-size: 30px;
+  }
+
+  .para-1, .para-2 {
+      font-size: 16px;
+  }
+
+  #chat-container {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+  }
+
+  .faq-titletext, .title-1 {
+      font-size: 40px;
+  }
+
+  .aboutustext {
+      font-size: 16px;
+  }
+
+  .parabox1, .parabox2, .parabox3 {
+      height: auto;
+  }
+
+  .faq-content {
+      width: 100%;
+  }
+}
+@media (max-width: 1080px) {
+  body {
+    background-size: cover;
+}
+#imgdiv{
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+    padding: 10px;
+    height: auto;
+    background-position: -100%;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
+
+nav ul li {
+    margin-right: 0;
+    font-size: 40px;
+}
+
+nav a {
+    font-size: 40px;
+}
+
+.info {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20%;
+}
+
+.title {
+    font-size: 70px;
+}
+
+.para-1, .para-2 {
+    font-size: 40px;
+}
+
+#chat-container {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 50px;
+}
+
+.agro-title {
+    font-size: 50px;
+}
+
+.faq-content {
+  align-items: center;
+    width: 41%;
+  }
+
+.faq-titletext, .title-1 {
+    font-size: 70px;
+}
+
+.aboutustext {
+    font-size: 18px;
+}
+
+.parabox1, .parabox2, .parabox3 {
+    float: none;
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+    margin-bottom: 20px;
+}
+
+footer {
+    position: relative;
+}
+
+.faq-header {
+    margin-top: 5%;
+}
+
+.faq-question {
+    padding: 10px 0;
+    font-size: 100px;
+}
+
+input[type="text"] {
+    padding: 12px;
+    font-size: 20px;
+}
+
+.enter, button {
+    padding: 10px 15px;
+    font-size: 20px;
+}
+
+#loader img {
+    width: 120px;
+}
+}

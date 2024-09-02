@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Untitled_design__1_-removebg-preview.png" type="image/icon type">
+</head>
+<body>
+  <header>
+  
+        </header>
+            <div class="navbar">
+                
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#chatbot">Chatbot</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#about-us">About Us</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        <div id="home" class="info">
+          <div class="container">
+            <p class="title"><strong>AGRO PLUS</strong></p>
+          </div>
+            
+            <p class="para-1">AGRO AI is an AI-powered chatbot designed specifically for agriculture and plant care.
+                 It provides farmers with valuable 
+                 information about their plants without wasting their time.</p>            
+        </div>
+    <section id="chatbot">
+
+        <div id="chat-container">
+          
+            <h1 class="agro-title">AGRO AI</h1>
+            <div id="chat-history">
+              <div id="loader">
+                <img src="loader.png" alt="Loading..."> 
+              </div>
+            </div>
+            <form id="chat-form">
+              <input type="text" id="user-input" placeholder="Enter your prompt" >
+              <span class="focus-bg"></span>
+              <button type="submit">Enter</button>
+            </form>
+          </div>
+          
+    </section>
+    <section id="faq">
+
+    <div class="faq-header"><strong class="faq-titletext">FAQ</strong></div>
+      <br><br><br>
+    <div class="faq-content">
+      <div class="plus">+</div>
+      <div class="faq-question">
+        <input id="q1" type="checkbox" class="panel">
+        <label for="q1" class="panel-title">What is AGRO AI?</label>
+        
+        <div class="panel-content">AGRO AI is an AI chatbot which provides you quick and straight forward answers to your agriculture problems.</div>
+      </div>
+      <div class="plus">+</div>
+      <div class="faq-question">
+        <input id="q2" type="checkbox" class="panel">
+        <label for="q2" class="panel-title">Why AGRO AI?</label>
+        <div class="panel-content">AGRo AI is the fastest and the most relaible source for 1 to 1 help for your agricultural problems.</div>
+      </div>
+      
+      <div class="plus">+</div>
+      <div class="faq-question">
+        <input id="q4" type="checkbox" class="panel">
+        <label for="q4" class="panel-title">What impact does Agro AI aim to have?</label>
+        <div class="panel-content">AGRO AI aims to positively impact underserved communities by solving queries related to agriculture using natural language technology.</div>
+      </div>
+      <div class="plus">+</div>
+      <div class="faq-question">
+        <input id="q5" type="checkbox" class="panel">
+        <label for="q5" class="panel-title">Is AGRO AI available 24/7?</label>
+        <div class="panel-content">Yes, Agro AI is available 24/7 and can be accessed through any web service device. </div>
+      </div>
+      <div class="plus">+</div>
+      <div class="faq-question">
+        <input id="q6" type="checkbox" class="panel">
+        <label for="q6" class="panel-title">Does Agro AI support multiple languages?</label>
+        <div class="panel-content">Agro AI supports multiple languages, especially considering its target audience in India.</div>
+      </div>
+    </div>
+    </section>
+    <section id="about-us">
+      <p class="title-1"><strong>About Us</strong></p>
+      <div class="aboutustext">
+          <div class ="para-2">
+           <p>This project was made by Aseemm Arora, Jasnoor Singh and Ishan Sharma from class 9th.</p> 
+           <div class="parabox1">
+            <li class="intro1" style="list-style-type: none;">Jasnoor Singh</li>
+            <p>Jasnoor Singh is a skilled front-end developer with a strong background in creating visually 
+            appealing and user-friendly web interfaces. With a few years of experience under his belt,
+             He has honed his skills in the fundamental technologies of modern web development: HTML, CSS.</p>
+           </div>
+          <div class="parabox2">
+            <li class="intro1" style="list-style-type: none;"> Aseemm Arora </li>
+            <p> Aseem Arora is a experienced backend developer with a strong background in two major programming languages:
+             JavaScript and Java. His extensive experience in these technologies has equipped him with the skills
+              necessary to tackle complex backend challenges in various industries. </p>
+          </div>
+          <div class="parabox3">
+            <li class="intro1" style="list-style-type: none;"> Ishan Sharma </li>
+            <p> Ishan Sharma is a talented presenter known for his exceptional presentation skills and outstanding achievements
+             in competitive speech and debate tournaments. His impressive track record and dedication to the field have earned
+              him recognition among peers and judges alike.</p>
+          </div>
+          
+          </div>
+      </div>
+    </section>
+
+    <script>
+   const chatHistory = document.getElementById('chat-history');
+        const userInput = document.getElementById('user-input');
+        const form = document.getElementById('chat-form');
+
+        function parseMarkdown(text) {
+            return text
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  
+                .replace(/^\s*\*\s+(.*)$/gm, '<li>$1</li>')        // Convert * text to <li>text</li>
+                .replace(/(?:^|\n)([^\n]*)/g, '<p>$1</p>')         // Convert text to <p>text</p>
+                .replace(/<\/li>\s*<p>/g, '</li>')                 // Cleanup any <p> after <li>
+                .replace(/<\/p><p><li>/g, '<li>')                  // Cleanup any <p> before <li>
+                .replace(/<\/li><\/p>/g, '</li>')                  // Cleanup any </li></p>
+                .replace(/<\/p><p>/g, '</p><br><p>');              // Ensure paragraphs are separated with a line break
+        }
+
+         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const target = document.querySelector(this.getAttribute('href'));
+
+                window.scroll({
+                    top: target.offsetTop,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        async function sendMessage() {
+            const userMessage = userInput.value;
+            userInput.value = '';// Clear input field
+            console.log(userMessage);
+
+            try {
+                const response = await fetch('/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ userInput: userMessage }),
+                });
+
+                const data = await response.json();
+                console.log(data);
+                let botMessage = data.response;
+                console.log(botMessage);
+
+                botMessage = parseMarkdown(botMessage);
+
+                chatHistory.innerHTML += `<div class="user-message">${userMessage}</div>`;
+                chatHistory.innerHTML += `<div class="bot-message">${botMessage}</div>`;
+
+                chatHistory.scrollTop = chatHistory.scrollHeight;
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+//Handle submission
+form.addEventListener('submit', async (event) => {
+  event.preventDefault(); // Prevent form submission
+  showLoader();
+
+  try {
+    await sendMessage();
+    hideLoader();
+  } catch (error) {
+    console.error('Error:', error);
+    // Handle errors gracefully, e.g., display an error message to the user
+  }
+});
+
+function showLoader() {
+  document.getElementById('loader').style.display = 'block';
+  document.getElementById('loader').style.opacity = '1';
+}
+
+function hideLoader() {
+  setTimeout(() => {
+    document.getElementById('loader').style.opacity = '0';
+    document.getElementById('loader').style.display = 'none';
+  }, 0);
+}
+
+      </script>
+      <footer>
+        <p class="footertext1">©2024-2025 saint soldier school</p>
+      </footer>
+</body>
+</html>
